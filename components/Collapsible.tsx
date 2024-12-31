@@ -3,10 +3,9 @@ import { StyleSheet, TouchableOpacity } from "react-native";
 
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
-import { IconSymbol } from "@/components/ui/IconSymbol";
+import Ionicons from "@expo/vector-icons/Ionicons";
 import { Colors } from "@/constants/Colors";
 import { useColorScheme } from "@/hooks/useColorScheme";
-import LabelText from "./LabelText";
 
 export function Collapsible({
   title,
@@ -29,12 +28,14 @@ export function Collapsible({
         activeOpacity={0.8}
       >
         <ThemedText type="subtitle">{title}</ThemedText>
-        <IconSymbol
-          name="chevron.right"
-          size={32}
-          weight="medium"
-          color={theme === "light" ? Colors.light.icon : Colors.dark.icon}
-          style={{ transform: [{ rotate: isOpen ? "90deg" : "0deg" }] }}
+        <Ionicons
+          name="chevron-forward"
+          style={{
+            transform: [{ rotate: isOpen ? "90deg" : "0deg" }],
+            color: theme === "light" ? Colors.light.icon : Colors.dark.icon,
+            fontSize: 26,
+            opacity: 0.6,
+          }}
         />
       </TouchableOpacity>
       {isOpen && <ThemedView style={styles.content}>{children}</ThemedView>}
