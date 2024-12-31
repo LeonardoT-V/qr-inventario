@@ -2,7 +2,7 @@ import { Text, SafeAreaView, StyleSheet, View } from "react-native";
 import LabelText from "@/components/LabelText";
 import { Collapsible } from "@/components/Collapsible";
 import { formatDate } from "@/utils";
-import { Cambio, Mantenimiento } from "@/types";
+import { Cambio } from "@/types";
 import { useTheme } from "@react-navigation/native";
 
 export default function ListCambios({ cambios }: { cambios: Cambio[] }) {
